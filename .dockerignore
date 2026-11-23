@@ -1,0 +1,17 @@
+.git
+.env
+.env.*
+!.env.example
+data
+backups
+family-backups
+node_modules
+coverage
+tests
+*.p8
+*.key
+*.p12
+*.pem
+*.sqlite*
+*.log
+README.md

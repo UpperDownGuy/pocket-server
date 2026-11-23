@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+data/
+backups/
+family-backups/
+node_modules/
+*.p8
+*.key
+*.p12
+*.pem
+*.sqlite*
+coverage/
+*.log
+.DS_Store
+Thumbs.db

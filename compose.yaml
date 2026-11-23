@@ -1,0 +1,25 @@
+name: pocket
+services:
+  api:
+    build: .
+    image: pocket-server:local
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      PORT: "8787"
+      DB_PATH: /app/data/pocket.sqlite
+    ports:
+      - "${POCKET_BIND_ADDRESS:-127.0.0.1}:${POCKET_PORT:-8787}:8787"
+    volumes:
+      - pocket-data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    stop_grace_period: 30s
+volumes:
+  pocket-data:
